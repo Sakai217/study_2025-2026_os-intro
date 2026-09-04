@@ -1,0 +1,136 @@
+\begin{frame}
+\begin{block}{Титульный слайд}
+\protect\phantomsection\label{ux442ux438ux442ux443ux43bux44cux43dux44bux439-ux441ux43bux430ux439ux434}
+\textbf{Дисциплина:} Архитектура компьютеров и операционные системы
+(раздел «Операционные системы»)\\
+\textbf{Работа:} Лабораторная работа 3 --- Markdown
+
+\textbf{Студент:} Гаджимурадов Аяз Тахирович\\
+\textbf{Преподаватель:} Кулябов Дмитрий Сергеевич, д.ф.-м.н.,
+профессор\\
+\textbf{Организация:} Российский университет дружбы народов (РУДН)
+\end{block}
+\end{frame}
+
+\begin{frame}{Цель работы}
+\protect\phantomsection\label{ux446ux435ux43bux44c-ux440ux430ux431ux43eux442ux44b}
+Получение навыков правильной работы с репозиториями git.
+\end{frame}
+
+\begin{frame}{Теоретические сведения}
+\protect\phantomsection\label{ux442ux435ux43eux440ux435ux442ux438ux447ux435ux441ux43aux438ux435-ux441ux432ux435ux434ux435ux43dux438ux44f}
+Рабочий процесс Gitflow Workflow. Будем описывать его с использованием
+пакета git-flow.
+\end{frame}
+
+\begin{frame}{Задание}
+\protect\phantomsection\label{ux437ux430ux434ux430ux43dux438ux435}
+Выполнить работу для тестового репозитория. Преобразовать рабочий
+репозиторий в репозиторий с git-flow и conventional commits.
+\end{frame}
+
+\begin{frame}{Установка git-flow}
+\protect\phantomsection\label{ux443ux441ux442ux430ux43dux43eux432ux43aux430-git-flow}
+Установка из коллекции репозиториев Copr
+(https://copr.fedorainfracloud.org/coprs/elegos/gitflow/):
+
+Enable the copr repository dnf copr enable elegos/gitflow Install
+gitflow dnf install gitflow
+
+\includegraphics[width=0.7\linewidth,height=\textheight,keepaspectratio]{image/1.jpg}
+\end{frame}
+
+\begin{frame}[fragile]{Установка Node.js}
+\protect\phantomsection\label{ux443ux441ux442ux430ux43dux43eux432ux43aux430-node.js}
+На Node.js базируется программное обеспечение для семантического
+версионирования и общепринятых коммитов.
+
+\begin{verbatim}
+Fedora
+
+dnf install nodejs
+dnf install pnpm
+\end{verbatim}
+\end{frame}
+
+\begin{frame}[fragile]{Настройка Node.js}
+\protect\phantomsection\label{ux43dux430ux441ux442ux440ux43eux439ux43aux430-node.js}
+Для работы с Node.js добавим каталог с исполняемыми файлами,
+устанавливаемыми yarn, в переменную PATH.
+
+\begin{verbatim}
+Запустите:
+pnpm setup
+Перелогиньтесь, или выполните:
+source ~/.bashrc
+\end{verbatim}
+
+\includegraphics[width=0.7\linewidth,height=\textheight,keepaspectratio]{image/2.jpg}
+\end{frame}
+
+\begin{frame}{Создание репозитория git}
+\protect\phantomsection\label{ux441ux43eux437ux434ux430ux43dux438ux435-ux440ux435ux43fux43eux437ux438ux442ux43eux440ux438ux44f-git}
+Создайте репозиторий на GitHub. Для примера назовём его git-extended.
+git commit -m ``first commit'' git remote add origin
+git@github.com:/git-extended.git git push -u origin master
+
+\includegraphics[width=0.7\linewidth,height=\textheight,keepaspectratio]{image/3.jpg}
+\end{frame}
+
+\begin{frame}{Создание репозитория git}
+\protect\phantomsection\label{ux441ux43eux437ux434ux430ux43dux438ux435-ux440ux435ux43fux43eux437ux438ux442ux43eux440ux438ux44f-git-1}
+Делаем первый коммит и выкладываем на github:
+
+\includegraphics[width=0.7\linewidth,height=\textheight,keepaspectratio]{image/4.jpg}
+\end{frame}
+
+\begin{frame}{Конфигурация общепринятых коммитов}
+\protect\phantomsection\label{ux43aux43eux43dux444ux438ux433ux443ux440ux430ux446ux438ux44f-ux43eux431ux449ux435ux43fux440ux438ux43dux44fux442ux44bux445-ux43aux43eux43cux43cux438ux442ux43eux432}
+Конфигурация для пакетов Node.js pnpm init Сконфигурим формат коммитов.
+Для этого добавим в файл package.json команду для формирования коммитов:
+
+\includegraphics[width=0.7\linewidth,height=\textheight,keepaspectratio]{image/8.jpg}
+\end{frame}
+
+\begin{frame}{Конфигурация общепринятых коммитов}
+\protect\phantomsection\label{ux43aux43eux43dux444ux438ux433ux443ux440ux430ux446ux438ux44f-ux43eux431ux449ux435ux43fux440ux438ux43dux44fux442ux44bux445-ux43aux43eux43cux43cux438ux442ux43eux432-1}
+Добавим новые файлы, Выполним коммит, Отправим на github
+
+\includegraphics[width=0.7\linewidth,height=\textheight,keepaspectratio]{image/5.jpg}
+\end{frame}
+
+\begin{frame}{Конфигурация git-flow}
+\protect\phantomsection\label{ux43aux43eux43dux444ux438ux433ux443ux440ux430ux446ux438ux44f-git-flow}
+Инициализируем git-flow Префикс для ярлыков установим в v.
+
+\includegraphics[width=0.7\linewidth,height=\textheight,keepaspectratio]{image/5.jpg}
+\end{frame}
+
+\begin{frame}[fragile]{Конфигурация git-flow}
+\protect\phantomsection\label{ux43aux43eux43dux444ux438ux433ux443ux440ux430ux446ux438ux44f-git-flow-1}
+\begin{verbatim}
+Создадим релиз с версией 1.2.3:
+Создадим журнал изменений
+
+standard-changelog
+
+Добавим журнал изменений в индекс
+
+git add CHANGELOG.md
+git commit -am 'chore(site): update changelog'
+
+Зальём релизную ветку в основную ветку. Отправим данные на github
+\end{verbatim}
+
+\includegraphics[width=0.7\linewidth,height=\textheight,keepaspectratio]{image/6.jpg}
+\end{frame}
+
+\begin{frame}[fragile]{Создание релиза git-flow}
+\protect\phantomsection\label{ux441ux43eux437ux434ux430ux43dux438ux435-ux440ux435ux43bux438ux437ux430-git-flow}
+\begin{verbatim}
+Создадим релиз на github с комментарием из журнала изменений:
+gh release create v1.2.3 -F CHANGELOG.md
+\end{verbatim}
+
+\includegraphics[width=0.7\linewidth,height=\textheight,keepaspectratio]{image/9.jpg}
+\end{frame}
