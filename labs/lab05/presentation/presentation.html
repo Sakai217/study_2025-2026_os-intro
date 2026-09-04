@@ -1,0 +1,155 @@
+\begin{frame}{Цель работы}
+\protect\phantomsection\label{ux446ux435ux43bux44c-ux440ux430ux431ux43eux442ux44b}
+Целью работы является научится настраивать рабочую среду
+\end{frame}
+
+\begin{frame}{Задание}
+\protect\phantomsection\label{ux437ux430ux434ux430ux43dux438ux435}
+\begin{enumerate}
+\tightlist
+\item
+  Менеджер паролей pass
+\item
+  Настройка интерфейса с броузером
+\item
+  Сохранение пароля
+\item
+  Управление файлами конфигурации
+\item
+  Создание собственного репозитория с помощью утилит
+\item
+  Подключение репозитория к своей системе
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Теоретическое введение}
+\protect\phantomsection\label{ux442ux435ux43eux440ux435ux442ux438ux447ux435ux441ux43aux43eux435-ux432ux432ux435ux434ux435ux43dux438ux435}
+Менеджер паролей pass --- программа, сделанная в рамках идеологии Unix.
+Также носит название стандартного менеджера паролей для Unix (The
+standard Unix password manager).
+\end{frame}
+
+\begin{frame}{Установка Fedora}
+\protect\phantomsection\label{ux443ux441ux442ux430ux43dux43eux432ux43aux430-fedora}
+pass: dnf install pass pass-otp gopass: dnf install gopass
+\end{frame}
+
+\begin{frame}{Настройка}
+\protect\phantomsection\label{ux43dux430ux441ux442ux440ux43eux439ux43aux430}
+Ключи GPG Просмотр списка ключей: gpg --list-secret-keys Если ключа нет,
+нужно создать новый: gpg --full-generate-key
+
+\includegraphics[width=0.7\linewidth,height=\textheight,keepaspectratio]{image/1.jpg}
+\end{frame}
+
+\begin{frame}{Синхронизация с git}
+\protect\phantomsection\label{ux441ux438ux43dux445ux440ux43eux43dux438ux437ux430ux446ux438ux44f-ux441-git}
+Создадим структуру git: pass git init Также можно задать адрес
+репозитория на хостинге (репозиторий необходимо предварительно создать):
+pass git remote add origin git@github.com:git\_username/git\_repo.git
+Для синхронизации выполняется следующая команда: pass git pull pass git
+push
+
+\includegraphics[width=0.7\linewidth,height=\textheight,keepaspectratio]{image/2.jpg}
+\end{frame}
+
+\begin{frame}[fragile]{Настройка интерфейса с броузером}
+\protect\phantomsection\label{ux43dux430ux441ux442ux440ux43eux439ux43aux430-ux438ux43dux442ux435ux440ux444ux435ux439ux441ux430-ux441-ux431ux440ux43eux443ux437ux435ux440ux43eux43c}
+Для взаимодействия с броузером используется интерфейс native messaging.
+Поэтому кроме плагина к броузеру устанавливается программа,
+обеспечивающая интерфейс native messaging.
+
+Плагин browserpass
+
+\begin{verbatim}
+Репозиторий: https://github.com/browserpass/browserpass-extension
+Плагин для брoузера
+Плагин для Firefox: https://addons.mozilla.org/en-US/firefox/addon/browserpass-ce/.
+Плагин для Chrome/Chromium: https://chrome.google.com/webstore/detail/browserpass-c
+naepdomgkenhinolocfifgehidddafch.
+Интерфейс для взаимодействия с броузером (native messaging)
+Репозиторий: https://github.com/browserpass/browserpass-native
+
+Gentoo:
+emerge www-plugins/browserpass
+Fedora
+dnf copr enable maximbaz/browserpass
+dnf install browserpass
+\end{verbatim}
+
+\includegraphics[width=0.7\linewidth,height=\textheight,keepaspectratio]{image/3.jpg}
+\end{frame}
+
+\begin{frame}{Сохранение пароля}
+\protect\phantomsection\label{ux441ux43eux445ux440ux430ux43dux435ux43dux438ux435-ux43fux430ux440ux43eux43bux44f}
+Добавить новый пароль
+
+\includegraphics[width=0.7\linewidth,height=\textheight,keepaspectratio]{image/4.jpg}
+\end{frame}
+
+\begin{frame}{Дополнительное программное обеспечение}
+\protect\phantomsection\label{ux434ux43eux43fux43eux43bux43dux438ux442ux435ux43bux44cux43dux43eux435-ux43fux440ux43eux433ux440ux430ux43cux43cux43dux43eux435-ux43eux431ux435ux441ux43fux435ux447ux435ux43dux438ux435}
+Установите дополнительное программное обеспечение: sudo dnf copr enable
+peterwu/iosevka sudo dnf search iosevka sudo dnf install iosevka-fonts
+iosevka-aile-fonts iosevka-curly-fonts iosevka-slab-fonts
+iosevka-etoile-fonts iosevka-term-fonts
+
+\includegraphics[width=0.7\linewidth,height=\textheight,keepaspectratio]{image/4.jpg}
+\end{frame}
+
+\begin{frame}[fragile]{Установка}
+\protect\phantomsection\label{ux443ux441ux442ux430ux43dux43eux432ux43aux430}
+\begin{verbatim}
+Установка бинарного файла. Скрипт определяет архитектуру процессора и операционную систему и скачивает необходимый файл:
+
+с помощью wget:
+
+sh -c "$(wget -qO- chezmoi.io/get)"
+\end{verbatim}
+
+\includegraphics[width=0.7\linewidth,height=\textheight,keepaspectratio]{image/5.jpg}
+\end{frame}
+
+\begin{frame}[fragile]{Создание собственного репозитория с помощью
+утилит}
+\protect\phantomsection\label{ux441ux43eux437ux434ux430ux43dux438ux435-ux441ux43eux431ux441ux442ux432ux435ux43dux43dux43eux433ux43e-ux440ux435ux43fux43eux437ux438ux442ux43eux440ux438ux44f-ux441-ux43fux43eux43cux43eux449ux44cux44e-ux443ux442ux438ux43bux438ux442}
+\begin{verbatim}
+Будем использовать утилиты командной строки для работы с github.
+
+Создадим свой репозиторий для конфигурационных файлов на основе шаблона:
+
+gh repo create dotfiles --template="yamadharma/dotfiles-template" --private
+\end{verbatim}
+\end{frame}
+
+\begin{frame}[fragile]{Подключение репозитория к своей системе}
+\protect\phantomsection\label{ux43fux43eux434ux43aux43bux44eux447ux435ux43dux438ux435-ux440ux435ux43fux43eux437ux438ux442ux43eux440ux438ux44f-ux43a-ux441ux432ux43eux435ux439-ux441ux438ux441ux442ux435ux43cux435}
+\begin{verbatim}
+Инициализируйте chezmoi с вашим репозиторием dotfiles:
+
+chezmoi init git@github.com:<username>/dotfiles.git
+
+Проверьте, какие изменения внесёт chezmoi в домашний каталог, запустив:
+
+chezmoi diff
+
+Если вас устраивают изменения, внесённые chezmoi, запустите:
+
+chezmoi apply -v
+\end{verbatim}
+
+\includegraphics[width=0.7\linewidth,height=\textheight,keepaspectratio]{image/7.jpg}
+\end{frame}
+
+\begin{frame}{Подключение репозитория к своей системе}
+\protect\phantomsection\label{ux43fux43eux434ux43aux43bux44eux447ux435ux43dux438ux435-ux440ux435ux43fux43eux437ux438ux442ux43eux440ux438ux44f-ux43a-ux441ux432ux43eux435ux439-ux441ux438ux441ux442ux435ux43cux435-1}
+Можно автоматически фиксировать и отправлять изменения в исходный
+каталог в репозиторий. Эта функция отключена по умолчанию.
+
+Чтобы включить её, добавьте в файл конфигурации
+\textasciitilde/.config/chezmoi/chezmoi.toml следующее:
+
+{[}git{]} autoCommit = true autoPush = true
+
+\includegraphics[width=0.7\linewidth,height=\textheight,keepaspectratio]{image/6.jpg}
+\end{frame}
