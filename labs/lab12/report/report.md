@@ -2,7 +2,7 @@
 ## Front matter
 title: "Лабораторная работа №12"
 subtitle: "Программирование в командном процессоре ОС UNIX"
-author: "Лебедев Сергей Алексеевич"
+author: "Гаджимурадов Аяз Тахирович"
 
 ## Generic options
 lang: ru-RU

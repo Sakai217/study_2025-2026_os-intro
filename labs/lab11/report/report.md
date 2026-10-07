@@ -2,7 +2,7 @@
 ## Front matter
 title: "Лабораторная работа №11"
 subtitle: "Текстовой редактор emacs"
-author: "Лебедев Сергей Алексеевич"
+author: "Гаджимурадов Аяз Тахирович"
 
 ## Generic options
 lang: ru-RU

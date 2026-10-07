@@ -2,7 +2,7 @@
 ## Front matter
 title: "Лабораторная работа №9"
 subtitle: "Командная оболочка Midnight Commander"
-author: "Лебедев Сергей Алексеевич"
+author: "Гаджимурадов Аяз Тахирович"
 
 ## Generic options
 lang: ru-RU

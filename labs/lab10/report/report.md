@@ -2,7 +2,7 @@
 ## Front matter
 title: "Лабораторная работа №10"
 subtitle: "Текстовой редактор vi"
-author: "Лебедев Сергей Алексеевич"
+author: "Гаджимурадов Аяз Тахирович"
 
 ## Generic options
 lang: ru-RU
